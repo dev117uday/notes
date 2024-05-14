@@ -2,7 +2,7 @@
 
 In Scylla, as opposed to relational databases, the data model is based around the queries and not just around the domain entities. When creating the data model, we take into account both the conceptual data model and the application workflow: which queries will be performed by which users and how often.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="./assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 
 

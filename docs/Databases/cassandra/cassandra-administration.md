@@ -3,7 +3,7 @@
 ### Cassandra Ports
 
 
-![Ports](../.gitbook/assets/image (1).png)
+![Ports](./assets/cassandra_ports.png)
 
 Nodetool has 2 types of commands&#x20;
 

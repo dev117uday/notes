@@ -76,7 +76,8 @@ A query language for interacting with the Scylla (or Cassandra) database.
 
 One or more columns that are responsible for data distribution across the nodes. It determines in which nodes to store a given row
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>partition key</p></figcaption></figure>
+
+![Cassandra Partition](./assets/cassandra_part.png)
 
 #### CQL Shell
 
@@ -144,9 +145,9 @@ The database is designed around several core principles:
 
 * _SimpleStrategy_&#x20;
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>simple strategy</p></figcaption></figure>
+![simple strategy](./assets/simplestrategy.png)
 
 * _NetworkTopologyStrategy_
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>network topology strategy</p></figcaption></figure>
+![Network topo strategy](./assets/network-top-strategy.png)
 
