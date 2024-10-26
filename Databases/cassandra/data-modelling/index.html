@@ -1,0 +1,2542 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../cql/">
+      
+      
+        <link rel="next" href="advance-data-modelling/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Data Modelling - My Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-modelling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Notes" class="md-header__button md-logo" aria-label="My Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Modelling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Notes" class="md-nav__button md-logo" aria-label="My Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Databases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cassandra
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cassandra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cassandra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cassandra-administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cassandra Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cassandra-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cassandra Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data modelling
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data modelling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data Modelling
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Data Modelling
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-keep-in-mind-when-design-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things to keep in mind when design Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-we-should-not-focus-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things we should NOT focus on:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partition-and-clustering-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partition and Clustering Keys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partition and Clustering Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Partitions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="advance-data-modelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advance Data Modelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mongodb
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mongodb
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mongodb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MongoDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mongodb/mongo-administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mongo Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mongodb/mongodb-aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MongoDB Aggregation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mongodb/mql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sql
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sql
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/5-Order-of-sql-execution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Order of SQL Execution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1 Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            1 Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/1%20Getting%20Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/1%20Getting%20Started/administration-task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PgAdmin Tool
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    10 Summarization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            10 Summarization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/10%20Summarization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Summarization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/10%20Summarization/subqueries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SubQueries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/10%20Summarization/window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2 Data Types
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            2 Data Types
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/2%20Data%20Types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/2%20Data%20Types/arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/2%20Data%20Types/date-time-stamps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Date/Time/Stamps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/2%20Data%20Types/json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JSON
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/2%20Data%20Types/miscellaneous-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internal Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/2%20Data%20Types/sequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/2%20Data%20Types/user-defined-data-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Defined Data Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_5" id="__nav_2_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3 Databases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            3 Databases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/3%20Databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/3%20Databases/schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_6" id="__nav_2_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4 Tables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            4 Tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/aggregation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aggregation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/coalesce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usefull Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/combining-tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Combining Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/constraints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/cte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Table Expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/group-by-and-having/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GROUP BY and HAVING
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/miscellaneous/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OPERATORS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/order-by/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ORDER BY and DISTINCT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/views/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Views
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/4%20Tables/where/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WHERE Clause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_7" id="__nav_2_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    6 Advance tables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            6 Advance tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/6-Advance-tables/internals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advance Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/6-Advance-tables/managing-tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/6-Advance-tables/paritioning-tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partitioning Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/6-Advance-tables/pivotal-or-crosstab-tables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pivotal or Crosstab Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8" id="__nav_2_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    7 Joins
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            7 Joins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/7%20Joins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Joins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/7%20Joins/cross-join/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross &amp; Natural Joins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/7%20Joins/full-multiple-and-self-joins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Full, Multiple &amp; Self Joins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/7%20Joins/inner-join/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inner Join
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/7%20Joins/left-and-right-join/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Left and Right JOIN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_9" id="__nav_2_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    8 Functions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            8 Functions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/8%20Functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/8%20Functions/cursors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cursors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/8%20Functions/pl-pgsql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PL/pgSQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/8%20Functions/stored-procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stored Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_9_5" id="__nav_2_4_9_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Triggers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            Triggers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/8%20Functions/triggers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triggers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/8%20Functions/triggers/more-on-triggers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    More on Triggers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_10" id="__nav_2_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    9 Indexing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            9 Indexing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/9%20Indexing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indexing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/9%20Indexing/custom-indexes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Indexes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/9%20Indexing/gin-index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GIN Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/9%20Indexing/indexes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indexes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/9%20Indexing/sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/9%20Indexing/unique-index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unique Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-keep-in-mind-when-design-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things to keep in mind when design Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-we-should-not-focus-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things we should NOT focus on:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partition-and-clustering-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partition and Clustering Keys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partition and Clustering Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Partitions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="data-modelling">Data Modelling</h1>
+<p>In Scylla, as opposed to relational databases, the data model is based around the queries and not just around the domain entities. When creating the data model, we take into account both the conceptual data model and the application workflow: which queries will be performed by which users and how often.</p>
+<figure><img src="./assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>Query-based: Application -&gt; Data -&gt; Model</th>
+<th>Entity-based: Data -&gt; Model -&gt; Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Denormalization</td>
+<td>Support for foreign-keys, Joins</td>
+</tr>
+<tr>
+<td>5</td>
+<td>CAP Theorem, Eventual Consistency</td>
+<td>ACID Guarantee</td>
+</tr>
+<tr>
+<td><em>6</em></td>
+<td>Distributed Architecture</td>
+<td>Mostly single point of failure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="things-to-keep-in-mind-when-design-tables">Things to keep in mind when design Tables</h3>
+<ul>
+<li><strong>Even data distribution</strong>: data should be evenly spread across the cluster so that every <strong>node</strong> holds roughly the same amount of data. Scylla determines which node should store the data based on hashing the partition key. Therefore, choosing a suitable partition key is crucial. More on this later on.</li>
+<li><strong>To minimize the number of partitions accessed in a read query</strong>: To make reads faster, we’d ideally have all the data required in a read query stored in a single Table. Although it’s fine to duplicate data across tables, in terms of performance, it’s better if the data needed for a read query is in one table.</li>
+</ul>
+<h3 id="things-we-should-not-focus-on">Things we should <strong>NOT</strong> focus on:</h3>
+<ul>
+<li><strong>Avoiding data duplication</strong>: To get efficient reads, we sometimes have to duplicate data.&#x20;</li>
+<li><strong>Minimizing the number of writes</strong>: writes in Scylla DB aren’t free, but they are very efficient and “cheap.” Scylla DB is optimized for high write throughput. Reads, while still very fast, are usually more expensive than writes and are harder to fine-tune.&#x20;</li>
+<li>We’d usually be ready to increase the number of writes to increase read efficiency. Keep in mind that the number of tables also affects consistency.&#x20;</li>
+</ul>
+<h3 id="important">Important</h3>
+<ul>
+<li>ScyllaDB data modeling is query-based. That is, we think of the application workflow and the queries early on in the data model process</li>
+<li>A Keyspace is a top-level container that stores tables</li>
+<li>A Table is how ScyllaDB stores data and can be thought of as a set of rows and columns</li>
+<li>The Primary Key is composed of the Partition Key and Clustering Key</li>
+<li>One of our goals in data modeling is even data distribution. For that, we need to select a partition key correctly</li>
+<li>Selecting the Primary Key is very important and has a huge impact on query performance</li>
+</ul>
+<h3 id="partition-and-clustering-keys">Partition and Clustering Keys</h3>
+<p><code>composite primary key = partition key + clustering key</code></p>
+<p>The <strong>Partition Key</strong> is responsible for data distribution across the nodes. It determines which node will store a given row. It can be <strong>one</strong> or more columns. Without this, query wont execute</p>
+<p>The <strong>Clustering Key</strong> is responsible for sorting the rows within the partition. It can be <strong>zero</strong> or more column</p>
+<p>To query without the partition key, cluster would have to perform full scan which is super expensive.</p>
+<h4 id="example">Example:</h4>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">heartrate_v1</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">   </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="k">time</span><span class="w"> </span><span class="k">timestamp</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span><span class="n">heart_rate</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">heartrate_v1</span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">,</span><span class="w"> </span><span class="n">heart_rate</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-03-04 07:02:30&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">130</span><span class="p">);</span>
+</span></code></pre></div>
+<p>To run this query : (wont work)</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">heartrate_v1</span><span class="w"> </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="w"> </span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="o">&gt;=</span><span class="s1">&#39;2019-03-04 07:01:00&#39;</span><span class="w"> </span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="o">&lt;=</span><span class="s1">&#39;2019-03-04 07:02:00&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>we partition and clustering key</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">heartrate_v2</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">   </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">   </span><span class="k">time</span><span class="w"> </span><span class="k">timestamp</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">   </span><span class="n">heart_rate</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">   </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">);</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">heartrate_v2</span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">,</span><span class="w"> </span><span class="n">heart_rate</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">   </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-03-04 07:01:05&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">heartrate_v2</span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">,</span><span class="w"> </span><span class="n">heart_rate</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">   </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-03-04 07:01:10&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">heartrate_v2</span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">,</span><span class="w"> </span><span class="n">heart_rate</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">   </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-03-04 07:01:50&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">96</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">heartrate_v2</span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">,</span><span class="w"> </span><span class="n">heart_rate</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">   </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-04-04 07:01:50&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">heartrate_v2</span><span class="w"> </span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="w"> </span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="o">&gt;=</span><span class="s1">&#39;2019-03-04 07:01:00&#39;</span><span class="w"> </span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="o">&lt;=</span><span class="s1">&#39;2019-03-04 07:02:00&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>This also eliminates the problem of storing just one value for a primary key. Partition Key can be more than one column.</p>
+<p><strong>If we have multiple partition keys</strong></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">heartrate_v3</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">   </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">   </span><span class="k">time</span><span class="w"> </span><span class="k">timestamp</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">   </span><span class="n">heart_rate</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">   </span><span class="n">pet_name</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">   </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">((</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">),</span><span class="w"> </span><span class="n">pet_name</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">);</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">heartrate_v3</span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">,</span><span class="w"> </span><span class="n">heart_rate</span><span class="p">,</span><span class="w"> </span><span class="n">pet_name</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-03-04 07:01:10&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Duke&#39;</span><span class="p">);</span><span class="w"> </span>
+</span></code></pre></div>
+<p>this query wont work, cuz we need both the partition keys</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">heartrate_v3</span><span class="w"> </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="p">;</span>
+</span></code></pre></div>
+<p>----------------------------</p>
+<p>it is possible to define (do this):</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">heartrate_v4</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">   </span><span class="k">time</span><span class="w"> </span><span class="k">timestamp</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">   </span><span class="n">heart_rate</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">   </span><span class="n">pet_name</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">   </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="n">pet_name</span><span class="p">,</span><span class="w"> </span><span class="n">heart_rate</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">);</span>
+</span></code></pre></div>
+<ul>
+<li>If there is more than one column in the Clustering Key (pet_name and heart_rate in the example above), the order of these columns defines the clustering order. For a given partition, all the rows are physically ordered inside ScyllaDB by the clustering order. This order determines what select query you can efficiently run on this partition.</li>
+<li>In this example, the ordering is first by pet_name and then by heart_rate.</li>
+<li>In addition to the Partition Key columns, a query may include the Clustering Key. If it does include the Clustering Key columns they must be used in the same order as they were defined.</li>
+</ul>
+<p>It <strong>fails</strong>, as <code>pet_name</code> comes before <code>heart_rate</code> sin the clustering key.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">heartrate_v4</span><span class="w"> </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="n">e4567</span><span class="o">-</span><span class="n">e89b</span><span class="o">-</span><span class="mi">12</span><span class="n">d3</span><span class="o">-</span><span class="n">a456</span><span class="o">-</span><span class="mi">426655440</span><span class="n">b23</span><span class="w"> </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">AND</span><span class="w"> </span><span class="n">heart_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span></code></pre></div>
+<p>By default, sorting is based on the natural (ASC) order of the clustering columns.</p>
+<p>In order to get query in DESC order, we would need to define the table in the same way</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">heartrate_v5</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">   </span><span class="n">pet_chip_id</span><span class="w"> </span><span class="n">uuid</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">   </span><span class="k">time</span><span class="w"> </span><span class="k">timestamp</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">   </span><span class="n">heart_rate</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">   </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">pet_chip_id</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">)</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">CLUSTERING</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="k">time</span><span class="w"> </span><span class="k">DESC</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="creating-partitions">Creating Partitions</h3>
+<p>We don't need partitions size to grow too big, so we can break them by using composite partition key. For example&#x20;</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>CREATE TABLE heartrate_v2 (
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    pet_chip_id  uuid,
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    date text,
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    time timestamp,
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    heart_rate int,
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    PRIMARY KEY ((pet_chip_id,date), time));
+</span></code></pre></div>
+<p>In this case, we would be able to query by pet_chip, for a given day, without having large partitions. The partition size will be limited by the day. Every day, a new partition will be created for each pet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
